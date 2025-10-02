@@ -1,6 +1,7 @@
 "use client"
 import { Button } from "@workspace/ui/components/button"
 import {Label} from "@workspace/ui/components/label"
+
 export default function Page() {
   const handleClick = () => {
     console.log("Button clicked!")

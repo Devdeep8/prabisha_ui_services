@@ -1,5 +1,5 @@
 {
-  "name": "@agency/cli",
+  "name": "@devathedeveloper/cli",
   "version": "1.0.0",
   "description": "CLI tool for Agency UI initialization",
   "bin": {
@@ -11,6 +11,19 @@
     "dev": "tsup src/index.ts --format esm --watch",
     "typecheck": "tsc --noEmit"
   },
+  "keywords": ["nextjs", "ui", "cli", "agency", "shadcn"],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devdeep8/prabisha_ui_services.git"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "commander": "^12.0.0",
     "prompts": "^2.4.2",

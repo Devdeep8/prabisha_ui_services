@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@devathedeveloper/cli':
+        specifier: workspace:*
+        version: link:packages/cli
       '@workspace/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
