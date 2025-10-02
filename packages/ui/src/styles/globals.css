@@ -3,6 +3,14 @@
 @source "../../../components/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
+@theme {
+  --font-family-poppins: var(--font-poppins);
+  --font-family-montserrat: var(--font-montserrat);
+}
+
+body {
+  font-family: 'Poppins', 'Montserrat';
+}
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
