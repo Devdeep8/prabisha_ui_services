@@ -1,5 +1,5 @@
-import * as React from "react"
-import {ScrollArea, ScrollBar} from "@workspace/ui/components/scroll-area"
+import * as React from "react";
+import { ScrollArea, ScrollBar } from "@workspace/ui/components/scroll-area";
 import {
   Sidebar,
   SidebarContent,
@@ -11,7 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@workspace/ui/components/sidebar"
+} from "@workspace/ui/components/sidebar";
 
 // This is sample data.
 const data = {
@@ -22,106 +22,45 @@ const data = {
       url: "#",
       items: [
         {
-          title: "Installation",
-          url: "#",
-        },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Building Your Application",
-      url: "#",
-      items: [
-        {
-          title: "Routing",
-          url: "#",
-        },
-        {
-          title: "Data Fetching",
+          title: "Quick Start",
           url: "#",
           isActive: true,
         },
         {
-          title: "Rendering",
-          url: "#",
-        },
-        {
-          title: "Caching",
-          url: "#",
-        },
-        {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
+          title: "Login and Auth",
           url: "#",
         },
       ],
     },
-   
-   
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props}>
-      <SidebarHeader>
-       
-      </SidebarHeader>
+    <Sidebar collapsible="none" className="border-r-2 bg-background">
       <SidebarContent>
-                    <ScrollArea className="h-screen">
-
-        {/* We create a SidebarGroup for each parent. */}
-        {data.navMain.map((item) => (
-          <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
-                      <a href={item.url}>{item.title}</a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
-        <ScrollBar orientation="vertical" />
-            </ScrollArea>
-
+        <ScrollArea className="">
+          {/* We create a SidebarGroup for each parent. */}
+          {data.navMain.map((item) => (
+            <SidebarGroup key={item.title}>
+              <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {item.items.map((item) => (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton asChild isActive={item.isActive}>
+                        <a href={item.url}>{item.title}</a>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          ))}
+          <ScrollBar orientation="vertical" />
+        </ScrollArea>
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

@@ -1,7 +1,7 @@
 import { Poppins, Montserrat } from "next/font/google";
-
 import "@workspace/ui/globals.css";
 import { Providers } from "@/components/providers";
+import PrabishaHeader from "@/components/ui/main-header";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,7 +32,10 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${montserrat.variable} font-sans antialiased `}
       >
-        <Providers>{children}</Providers>
+          {/* <PrabishaHeader/> */}
+        <Providers>
+          {children}
+          </Providers>
       </body>
     </html>
   );
